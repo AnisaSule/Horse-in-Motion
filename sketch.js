@@ -13,6 +13,8 @@ function setup() {
 
 function draw() {
     background(0);
+	image(spaceImg, 0, 0);
+filter(INVERT);
 
     if (rotationY !== undefined) {
         textSize(28);
