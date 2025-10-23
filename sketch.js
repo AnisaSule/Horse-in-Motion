@@ -3,7 +3,7 @@
 let horse;
 
 function preload() {
-    horse = loadImage("Assets/HorseInMotion.gif"); 
+    horse = loadImage("./Assets/HorseInMotion.gif"); 
 }
 
 function setup() {
