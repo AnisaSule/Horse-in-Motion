@@ -8,6 +8,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   imageMode(CENTER);
   enableGyroTap("Touch screen to enable gyroscope");
+  lockGestures();
 }
 
 function draw() {
