@@ -1,30 +1,31 @@
 let horse;
-let gyroIsEnabled = false;  // Add variable declaration
 
 function preload() {
-    horse = loadImage("Assets/HorseInMotion.gif");
+  horse = loadImage("Assets/HorseInMotion.gif");
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    imageMode(CENTER);
-    lockGestures();
-    enableGyroTap("Touch to start");
+  createCanvas(windowWidth, windowHeight);
+  imageMode(CENTER);
+  lockGestures();
+
+  // Prompt user immediately to enable gyroscope
+  enableGyroTap("Tap to enable motion access");
 }
 
 function draw() {
-    background(0);
-    
-    if (gyroIsEnabled) {
-        push();
-        translate(width/2, height/2);
-        if (rotationY < 0) scale(-1, 1);
-        image(horse, 0, 0);
-        pop();
-    }
-}
+  background(0);
+  textSize(28);
+  textAlign(CENTER);
+  fill(255);
+  text("Horse in Motion", width / 2, 50);
 
-// Add callback function for when gyroscope is enabled
-function onGyroEnabled() {
-    gyroIsEnabled = true;
+  if (rotationY !== undefined) {
+    push();
+    translate(width / 2, height / 2);
+    if (rotationY < 0) scale(-1, 1);
+    image(horse, 0, 0);
+    pop();
+  
+  }
 }
