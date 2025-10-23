@@ -14,15 +14,16 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(255);
   textSize(28);
   textAlign(CENTER);
-  fill(255);
+  fill(0);
   text("Horse in Motion", width / 2, 50);
 
   if (rotationY !== undefined) {
     push();
     translate(width / 2, height / 2);
+	
     if (rotationY < 0) scale(-1, 1);
     image(horse, 0, 0);
     pop();
