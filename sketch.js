@@ -10,19 +10,19 @@ function setup()
 }
 
 function preload(){
- horse = loadImage (Assets/HorseInMotion.gif)
+ horse = loadImage ("Assets/HorseInMotion.gif")
 }
 
 function draw()
 {
-Background (0);
+background (0);
 
 if (gyroIsEnabled) {
 textSize (28);
 text ("horse in Motion", width/2, height/2 - 100);
 }
 
-Push ();
+push ();
 translate (width/2, height/2);
 
 if (devicerotationY < 0) {
