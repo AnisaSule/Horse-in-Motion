@@ -14,10 +14,8 @@ function setup() {
 function draw() {
   background(0);
   textSize(28); textAlign(CENTER); fill(255);
-
-  if (gyroIsEnabled) {
-    text("Horse in Motion", width/2, height/2 - 300);
-    push(); translate(width/2, height/2);
+  text("Horse In Motion", width/2, 50);
+  
     if (rotationY < 0) scale(-1, 1);
     image(horse, 0, 0); pop();
   } else {
