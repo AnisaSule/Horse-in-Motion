@@ -13,6 +13,7 @@ function setup() {
 
 function draw() {
     background(0);
+
 	image(spaceImg, 0, 0);
 filter(INVERT);
 
@@ -20,7 +21,7 @@ filter(INVERT);
         textSize(28);
         textAlign(CENTER);
         fill(255);
-        text("Horse in Motion", width / 2, height / 2 - 100);
+        text("Horse in Motion", width / 2, height / 2 - 300);
 
         push();
         translate(width / 2, height / 2);
