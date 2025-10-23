@@ -1,6 +1,5 @@
-
-
 let horse;
+let gyroIsEnabled = false;
 
 function preload() {
     horse = loadImage("./Assets/HorseInMotion.gif"); 
@@ -9,16 +8,15 @@ function preload() {
 function setup() {
     createCanvas(windowWidth, windowHeight);
     imageMode(CENTER);
-	lockGestures();
+    lockGestures();
+    // Changed from enableGyroMode to enableGyroTap for better user experience
+    enableGyroTap("Touch screen to enable gyroscope");
 }
 
 function draw() {
     background(0);
 
-	image(spaceImg, 0, 0);
-filter(INVERT);
-
-    if (rotationY !== undefined) {
+    if (gyroIsEnabled) {
         textSize(28);
         textAlign(CENTER);
         fill(255);
@@ -33,5 +31,15 @@ filter(INVERT);
 
         image(horse, 0, 0);
         pop();
+    } else {
+        // Show instructions when gyro is not enabled
+        textSize(28);
+        textAlign(CENTER);
+        fill(255);
+        text("Touch screen to start", width / 2, height / 2);
     }
+}
+
+function onGyroEnabled() {
+    gyroIsEnabled = true;
 }
