@@ -1,4 +1,5 @@
 let horse;
+let gyroIsEnabled = false;  // Add variable declaration
 
 function preload() {
     horse = loadImage("Assets/HorseInMotion.gif");
@@ -21,4 +22,9 @@ function draw() {
         image(horse, 0, 0);
         pop();
     }
+}
+
+// Add callback function for when gyroscope is enabled
+function onGyroEnabled() {
+    gyroIsEnabled = true;
 }
